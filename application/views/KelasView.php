@@ -14,7 +14,9 @@
         <div class="alert alert-info text-center" role="alert">
             <h3>weblanjut tugas4 2001050005</h3>
         </div>
-        <div class="card text-bg-light mb-3" style="max-width: 100rem;">
+        <a href="<?=site_url('KelasControl/tambah')?>" class="mb-8 float-end btn btn-success"> tambah data </a><br>
+
+        <div class="card text-bg-light mt-5 mb-3" style="max-width: 100rem;">
   <div class="card-header">Data Kampus</div>
   <div class="card-body">
         <table class="table table-bordered">
@@ -25,6 +27,8 @@
                     <th scope="col">prodi</th>
                     <th scope="col">kelas</th>
                     <th scope="col">isi</th>
+                    <th scope="col">action</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -47,6 +51,7 @@
     </div>
 </div> 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
