@@ -39,5 +39,32 @@ class KelasControl extends CI_Controller
         $simpan = $this->KelasModel->add($data_input);
         redirect('KelasControl/index');
     }
+    public function hapus($id)
+    {
+        $this->KelasModel->delete($id);
+        redirect('KelasControl/index');
+    }
+    public function edit($id)
+    {
+        $data['isi']=$this->KelasModel->getOne($id);
+       return $this->load->view('KelasEdit' , $data);
 
+    }
+    public function proses_edit()
+    {
+        $id= $this->input->POST("txtid");
+        $fakultas = $this->input->POST("txtfakultas");
+        $prodi = $this->input->POST("txtprodi");
+        $kelas = $this->input->POST("txtkelas");
+        $isi = $this->input->POST("txtisi");
+        
+        $data_edit= [
+            'fakultas'=>$fakultas,
+            'prodi'=>$prodi,
+            'kelas'=>$kelas,
+            'isi'=>$isi
+        ];
+         $this->KelasModel->editData($id ,$data_edit);
+        redirect('KelasControl/index');   
+    }
 }

@@ -27,7 +27,7 @@
                     <th scope="col">prodi</th>
                     <th scope="col">kelas</th>
                     <th scope="col">isi</th>
-                    <th scope="col">action</th>
+                    <th colspan="2">aksi</th>
                     
                 </tr>
             </thead>
@@ -42,6 +42,17 @@
                         <td><?= $items->prodi; ?></td>
                         <td><?= $items->kelas; ?></td>
                         <td><?= $items->isi; ?></td>
+                        <td> 
+
+                        <a href="<?=site_url('KelasControl/hapus/' . $items->id)?>"
+                        onclick="return confirm('anda yakin ingin menghapus?')"
+                        class="btn btn-danger"> delete </a>
+
+                        <a href="<?=site_url('KelasControl/edit/' . $items->id)?>"
+                        class="btn btn-warning"> edit </a>
+
+                        
+                        </td>
                     </tr>
                 <?php
 
